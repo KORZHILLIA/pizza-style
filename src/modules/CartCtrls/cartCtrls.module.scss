@@ -1,0 +1,53 @@
+@import "../../styles/base/variables";
+@import "../../styles/utils/mixins";
+
+.general {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  @include flex();
+  transform: translateY(-100%);
+  background-color: $clr-backdrop;
+  transition: transform $transition;
+}
+
+.generalVisible {
+  @extend .general;
+  transform: translateY(0);
+  transition: transform $transition;
+}
+
+.btnWrapper {
+  max-width: 130px;
+  @include flex();
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.btn {
+  @include flex();
+  width: 30px;
+  height: 30px;
+  padding: 30px;
+  border-radius: 50%;
+  background-color: $clr-gray-support;
+  color: $clr-accent;
+
+  &:hover,
+  &:focus {
+    background-color: $clr-gray-support;
+    color: $clr-accent;
+  }
+
+  &:active .icon {
+    width: 17px;
+    height: 17px;
+  }
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}

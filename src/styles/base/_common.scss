@@ -1,0 +1,76 @@
+body {
+  max-width: 100%;
+  padding-top: 80px;
+  overflow-x: hidden;
+  font-family: $font-main;
+  @include font(12px, 16px);
+  color: $clr-font-main;
+  background-color: $clr-body-bg;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+p {
+  margin: 0;
+}
+
+main {
+  padding: 20px 0;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+button {
+  display: block;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  color: $clr-accent;
+  background-color: $clr-gray-support;
+  transition: color $transition, bacground-color $transition;
+
+  &:hover,
+  &:focus {
+    color: $clr-gray-support;
+    background-color: $clr-accent;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $clr-gray-support;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  @include mq(mobile) {
+    width: 320px;
+  }
+  @include mq(tablet) {
+    width: 768px;
+    padding: 0 32px;
+  }
+  @include mq(desktop) {
+    width: 1280px;
+    padding: 0 16px;
+  }
+}

@@ -1,0 +1,125 @@
+@import "../../../styles/base/variables";
+@import "../../../styles/utils/mixins";
+
+.item {
+  position: relative;
+  flex-basis: 280px;
+  padding: 15px;
+  border: 1px solid $clr-gray-support;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: none;
+  transition: border-radius $transition, box-shadow $transition;
+
+  &:hover,
+  &:focus {
+    border-radius: 0;
+    box-shadow: $shadow-goals;
+  }
+}
+
+.qty {
+  position: absolute;
+  top: 15px;
+  right: 3px;
+  width: 35px;
+  height: 35px;
+  padding: 8px;
+  @include flex();
+  border-radius: 50%;
+  font-family: "Courier New", Courier, monospace;
+  @include font(14px, 14px);
+  font-weight: 700;
+  color: $clr-gray-darkest;
+  background-color: $clr-accent;
+
+  @include mq(tablet) {
+    right: 15px;
+  }
+}
+
+.img {
+  display: block;
+  margin: 0 auto;
+}
+
+.meta {
+  margin-top: 10px;
+  @include font(18px, 20px);
+
+  @include mq(tablet) {
+    @include font(22px, 24px);
+  }
+}
+
+.title {
+  margin-bottom: 8px;
+  @include font(30px, 36px);
+  text-align: center;
+
+  @include mq(tablet) {
+    @include font(32px, 36px);
+  }
+}
+
+.description {
+  margin-bottom: 20px;
+}
+
+.btnWrapper {
+  position: absolute;
+  bottom: 0;
+  right: 15px;
+  @include flex();
+  column-gap: 10px;
+}
+
+.removeBtn {
+  margin: 10px auto;
+  padding: 4px;
+  border-radius: 8px;
+  @include font(20px, 22px);
+
+  @include mq(tablet) {
+    @include font(24px, 30px);
+  }
+}
+
+.btn {
+  width: 30px;
+  height: 30px;
+  @include flex();
+  padding: 8px;
+  border-radius: 50%;
+  background-color: $clr-gray-support;
+
+  &:hover,
+  &:focus {
+    background-color: $clr-gray-support;
+  }
+
+  &:active .icon {
+    width: 12px;
+    height: 12px;
+
+    @include mq(tablet) {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  @include mq(tablet) {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.icon {
+  width: 15px;
+  height: 15px;
+
+  @include mq(tablet) {
+    width: 20px;
+    height: 20px;
+  }
+}

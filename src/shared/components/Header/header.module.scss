@@ -1,0 +1,74 @@
+@import "../../../styles/base/_variables.scss";
+@import "../../../styles/utils/_mixins.scss";
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  @include flex(space-between);
+  padding: 20px;
+  padding-right: 30px;
+  background-color: $clr-gray-darkest;
+
+  @include mq(tablet) {
+    padding-right: 35px;
+  }
+}
+
+.linkWrapper {
+  @include flex();
+  column-gap: 15px;
+}
+
+.link {
+  position: relative;
+  @include font(18px, 21px);
+  color: $clr-accent;
+
+  @include mq(tablet) {
+    @include font(22px, 24px);
+  }
+}
+
+.linkActive {
+  @extend .link;
+  text-decoration: underline;
+}
+
+.logoWrapper {
+  @include flex();
+  &:active {
+    color: $clr-accent;
+  }
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+}
+
+.logoText {
+  @include font(20px, 25px);
+  color: $clr-accent;
+
+  @include mq(tablet) {
+    @include font(24px, 30px);
+  }
+}
+
+.cart {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 25px;
+  height: 25px;
+  @include flex();
+  border-radius: 50%;
+  font-family: "Courier New", Courier, monospace;
+  @include font(14px, 14px);
+  font-weight: 700;
+  color: $clr-gray-darkest;
+  background-color: $clr-accent;
+}

@@ -1,0 +1,72 @@
+@import "../../../styles/base/variables";
+@import "../../../styles/utils/mixins";
+
+.item {
+  position: relative;
+  flex-basis: 280px;
+  padding: 15px;
+  border: 1px solid $clr-gray-support;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: none;
+  transition: border-radius $transition, box-shadow $transition;
+
+  &:hover,
+  &:focus {
+    border-radius: 0;
+    box-shadow: $shadow-goals;
+  }
+
+  &:hover > .img,
+  &:focus > .img {
+    transform: scale(1.09);
+  }
+}
+
+.img {
+  display: block;
+  margin: 0 auto;
+  transform: scale(1);
+  transition: transform $transition;
+}
+
+.meta {
+  margin-top: 10px;
+  @include font(18px, 20px);
+
+  @include mq(tablet) {
+    @include font(20px, 22px);
+  }
+}
+
+.title {
+  margin-bottom: 8px;
+  @include font(30px, 36px);
+  text-align: center;
+}
+
+.description {
+  margin-bottom: 20px;
+}
+
+.price {
+  @include mq(tablet) {
+    position: absolute;
+    bottom: 14px;
+    left: 10px;
+    @include font(24px, 30px);
+  }
+}
+
+.btn {
+  position: absolute;
+  bottom: 10px;
+  right: 15px;
+  padding: 8px;
+  border-radius: 8px;
+  @include font(18px, 21px);
+
+  @include mq(tablet) {
+    @include font(20px, 24px);
+  }
+}

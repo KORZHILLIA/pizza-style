@@ -1,0 +1,12 @@
+@import "../../styles/base/variables";
+@import "../../styles/utils/mixins";
+
+.list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+
+  @include mq(tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

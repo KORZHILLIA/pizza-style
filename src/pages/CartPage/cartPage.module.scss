@@ -1,0 +1,35 @@
+@import "../../styles//base/variables";
+@import "../../styles/utils/mixins";
+
+.head {
+  margin-top: calc(50vh - 65px);
+  @include font(30px, 30px);
+  text-align: center;
+}
+
+.link {
+  color: $clr-accent;
+  text-decoration: underline;
+}
+
+.total {
+  margin: 20px 0;
+  @include font(36px, 40px);
+  text-align: center;
+}
+
+.btn {
+  margin: 10px auto;
+  padding: 8px;
+  border-radius: 8px;
+  @include font(30px, 36px);
+  color: $clr-accent;
+  background-color: $clr-gray-support;
+  transition: color $transition, bacground-color $transition;
+
+  &:hover,
+  &:focus {
+    color: $clr-gray-support;
+    background-color: $clr-accent;
+  }
+}
